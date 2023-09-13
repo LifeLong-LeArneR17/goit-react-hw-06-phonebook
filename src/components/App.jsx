@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setContacts, setFilter, setName, setNumber } from "redux/reducer";
 import { nanoid } from "nanoid";
 import { Filter } from "./Filter/Filter";
 import { ContactsList } from "./Contacts/ContactsList/ContactsList";
-const LOCAL_KEY = "contacts"
+// const LOCAL_KEY = "contacts"
 
 export function  App () {
   const dispatch = useDispatch()
@@ -60,14 +60,14 @@ const handleChangeFilter = evt => {
   dispatch(setContacts(contactsFromStore.filter(el => el.id !== contactId)))
   }
 
-  function saveContactsToLocalStorage(contactsFromStore) {
-    localStorage.setItem(LOCAL_KEY, JSON.stringify(contactsFromStore));
-  }
+  // function saveContactsToLocalStorage(contactsFromStore) {
+  //   localStorage.setItem(LOCAL_KEY, JSON.stringify(contactsFromStore));
+  // }
   
-  function loadContactsFromLocalStorage() {
-    const localData = localStorage.getItem(LOCAL_KEY);
-    return localData ? JSON.parse(localData) : [];
-  }
+  // function loadContactsFromLocalStorage() {
+  //   const localData = localStorage.getItem(LOCAL_KEY);
+  //   return localData ? JSON.parse(localData) : [];
+  // }
   
 
 
